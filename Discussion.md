@@ -74,27 +74,27 @@ In our project, we explored two primary approaches for efficiently extracting lo
    ```bash
    node extract_logs.js <YYYY-MM-DD>
 
-Output:
+### Output:
 The script writes the filtered (and optionally transformed) logs to an output file (e.g., ../output/output_<YYYY-MM-DD>.txt).
 For the Indexing & Caching Approach:
 Prepare the log file:
-Ensure that your log file is available and sorted by date.
+#Ensure that your log file is available and sorted by date.
 
-Run the script:
+## Run the script:
 
-bash
-Copy
-Edit
+```bash
+
 node extract_logs_indexed.js <YYYY-MM-DD>
 Output:
 The script either builds or reuses the index (stored in log_index.json), extracts logs for the specified date, and writes them to an output file (e.g., ../output/output_<YYYY-MM-DD>.txt).
+```
 
-Additional Thoughts
-Updating the Index:
+## Additional Thoughts
+### Updating the Index:
 If the log file is updated frequently, consider strategies for updating or invalidating the cached index.
 
-Further Optimizations:
+## Further Optimizations:
 For extremely high query volumes, explore parallel processing or leverage optimized system utilities (like grep or awk) where applicable.
 
-Error Handling:
+## Error Handling:
 Both approaches include error handling for file I/O, ensuring that any issues (e.g., missing files or permission errors) are properly reported.
